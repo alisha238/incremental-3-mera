@@ -35,26 +35,31 @@ namespace dotnetapp.Controllers
         [HttpPut]
         [Route("EditPlayer/{id}")]
         public IActionResult PutPlayer(int id, Player p){
+
+            try{
             Player pl= context.Players.Find(id);
-            if(ModelState.IsValid){
-                var player = new Player{
-                    Id= 1,
-                Name = "John Doe",
-                Age= 24,
-                BiddingPrice= 25,
-                Category="asd"
+            if(ModelState.IsValid)
+            {
+                GetPlayers 
                 };
             }
             return Ok();
+            }catch(){
+                
+            }
         }
 
         [HttpDelete]
         [Route("DeletePlayer/{id}")]
-        public IActionResult DeletePlayer(int id, Player p){
+        public IActionResult DeletePlayer(int id){
+            try{
             var data = context.Players.Find(id);
             context.Players.Remove(data);
             context.SaveChanges();
             return Ok();
+            }catch(System.Exception ex){
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

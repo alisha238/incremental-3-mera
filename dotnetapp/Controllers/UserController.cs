@@ -31,7 +31,7 @@ namespace dotnetapp.Controllers
  
         public IActionResult Login(User U) {
             if(ModelState.IsValid){
-                var data= context.Users.FirstOrDefault(u=> u.Name== U.Name && u.password == U.password)
+                var data= context.Users.FirstOrDefault(u=> u.Name== U.Name && u.password == U.password);
                 return RedirectToAction("Login", U);
             }
             return Ok();
@@ -40,7 +40,7 @@ namespace dotnetapp.Controllers
  
         [HttpPost]
         [Route("UserRegister")]
-        public IActionResult Register() {
+        public IActionResult Register(User u) {
 
             context.Users.Add(u);
             context.SaveChanges();
