@@ -1,53 +1,53 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { IPlayer } from '../models/iplayer';
-import { ITeam } from '../models/iteam';
-
-
+import {catchError} from 'rxjs/operators';
+// import { HttpErrorResponse } from '@angular/common/http';
+ 
 @Injectable({
   providedIn: 'root'
 })
-export class TeamserviceService {
-  private url: "https://8080-aafccbeeebdefacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin"
-
+export class AdminService {
+ 
+ 
+  private url : "https://8080-aafccbeeebdefacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
   constructor(private httpclient:HttpClient) { }
-
-
-  getAllPlayers():Observable<any[]>
+ 
+ 
+ 
+  getAllPlayers():Observable <any[]>
   {
-    return this.httpclient.get<any[]>(this.url + '/ListPlayers')
+    return this.httpclient.get<any[]>(this.url + '/GetPlayer');
   }
-
-  getMovie(id:number):Observable<IPlayer>
+ 
+  getPlayer(id:number):Observable<IPlayer>
   {
-    return this.httpclient.get<IMovie>(this.url + '/ListMovies/' + id).pipe(catchError(this.handleError))
+    return this.httpclient.get<IPlayer>(this.url + '/GetPlayer/' + id);
   }
-
-  httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
-  addMovie(moviedata:IMovie):Observable<IMovie>
+ 
+  httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
+  addPlayer(playerdata:IPlayer):Observable<IPlayer>{
+    return this.httpclient.post<IPlayer>(this.url+'/AddPlayer',playerdata,this.httpOptions);
+  }
+ 
+  editPlayer(playerdata:IPlayer):Observable<IPlayer>
   {
-    return this.httpclient.post<IMovie>(this.url+'/AddMovie', moviedata, this.httpOptions).pipe(catchError(this.handleError))
+    return this.httpclient.put<IPlayer>(this.url + '/EditPlayer/'+ playerdata.id,playerdata,this.httpOptions);
   }
-
-  editMovie(moviedata: IMovie):Observable<IMovie>
+  deletePlayer(id:number):Observable<IPlayer>
   {
-    return this.httpclient.put<IMovie>(this.url+'/EditMovie/' +moviedata.id, moviedata, this.httpOptions).pipe(catchError(this.handleError))
+    return this.httpclient.delete<IPlayer>(this.url + '/DeletePlayer/' + id);
   }
-
-  deleteMovie(id: number):Observable<IMovie>
-  {
-    return this.httpclient.delete<IMovie>(this.url +'/DeleteMovie/' +id).pipe(catchError(this.handleError))
-  }
-
-  addDetails(detailsdata: IDetails):Observable<IDetails>{
-    return this.httpclient.post<IDetails>(this.url2+'/AddMovieDetails', detailsdata,this.httpOptions).pipe(catchError(this.handleError))
-  }
-
-  handleError(error:HttpErrorResponse){
-    var errmsg = error.status + '\n' + error.statusText +'\n' +error.error
-    alert(errmsg)
-    return throwError(errmsg)
-  }
-
+ 
+  // addDetails(detailsdata: Idetails) :Observable<Idetails>{
+  //   return this.httpclient.post<Idetails>(this.url2 + '/AddMovieDetails',detailsdata, this.httpOptions).pipe(catchError(this.handleError));
+  // }
+ 
+  // handleError(error:HttpErrorResponse)
+  // {
+  //   var errmsg = error.status + '\n' + error.statusText + '\n' + error.error
+  //   alert(errmsg)
+  //   return throwError(errmsg)
+  // }
 }
