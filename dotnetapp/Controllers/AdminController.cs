@@ -22,10 +22,38 @@ namespace dotnetapp.Controllers
             context = _context;
         }
  
+        public IActionResult GetPlayer(){
+            var data = context.Players.ToList();
+            return Ok(data);
+        }
+
+        public IActionResult GetTeams(){
+            var data = context.Teams.ToList();
+            return Ok(data);
+        }
+
+        // [HttpPut]
+        // [Route("EditPlayer/{id}")]
+        // public IActionResult PutPlayer(int id, Player p){
+        //     Player pl= context.Players.Find(id);
+        //     if(ModelState.IsValid){
+        //         var player = new Player{
+                    
+        //         }
+        //     }
+        // }
+
+        
+
+
+
+
+
+
         [HttpGet]
  
         [Route("ListTeam")]
-        public IActionResult Get()
+        public IActionResult GetPlayers()
         {
             var data=from m in context.Teams select m;
             return Ok(data);
