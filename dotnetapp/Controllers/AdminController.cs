@@ -68,6 +68,27 @@ namespace dotnetapp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost]
+        [Route(AddPlayer)]
+        public IActionResult Post(Player p){
+            try{
+                if(ModelState.IsValid){
+                    context.Players.Add(p);
+                    context.SaveChanges();
+                }
+            }catch(System.Exception ex){
+
+            }
+        }
+
+
+
+
+        //// TEAM CONTROLLER//////
+
+        [HttpGet]
+        [Route()]
     }
 }
 
