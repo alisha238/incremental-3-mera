@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ErrorComponent } from './error/error.component';
+import { ListplayersComponent } from './listplayers/listplayers.component';
+import { FindplayersComponent } from './findplayers/findplayers.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ErrorComponent } from './error/error.component';
     AdminComponent,
     OrganizerComponent,
     RegistrationComponent,
-    ErrorComponent
+    ErrorComponent,
+    ListplayersComponent,
+    FindplayersComponent
   ],
   imports: [
     BrowserModule,
