@@ -35,7 +35,6 @@ namespace dotnetapp.Controllers
                 return RedirectToAction("Login", U);
             }
             return Ok();
-
         }
  
         [HttpPost]
