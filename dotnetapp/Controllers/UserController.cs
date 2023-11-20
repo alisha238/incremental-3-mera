@@ -29,13 +29,21 @@ namespace dotnetapp.Controllers
         [HttpPost]
         [Route("UserLogin")]
  
-        public IActionResult Login() {
+        public IActionResult Login(User U) {
+            if(ModelState.IsValid){
+                var data= context.Users.FirstOrDefault(u=> u.Name== U.Name && u.password == U.password)
+                return RedirectToAction("Login", U);
+            }
             return Ok();
+
         }
  
         [HttpPost]
         [Route("UserRegister")]
         public IActionResult Register() {
+
+            context.Users.Add(u);
+            context.SaveChanges();
             return Ok();
         }
  
