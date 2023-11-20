@@ -27,10 +27,6 @@ namespace dotnetapp.Controllers
             return Ok(data);
         }
 
-        public IActionResult GetTeams(){
-            var data = context.Teams.ToList();
-            return Ok(data);
-        }
 
         [HttpPut]
         [Route("EditPlayer/{id}")]
@@ -88,7 +84,65 @@ namespace dotnetapp.Controllers
         //// TEAM CONTROLLER//////
 
         [HttpGet]
-        [Route()]
+        [Route("GetTeams")]
+        public IActionResult GetTeam(){
+            var data = context.Teams.ToList();
+            return Ok(data);
+        }
+
+        [HttpPut]
+        [Route("EditTeam"/ {id})]
+        Public IActionResult PutTeam(int id,Team t) {
+            try{
+                if(ModelState.IsValid){
+                    Team e = CollectionExtensions.Teams.Find(id);
+                    e.TeamName = t.TeamName;
+                    context.SaveChanges();
+                    return Ok();
+                }
+            }
+            catch(System.Exception ex){
+                return BadRequest(ex.Message);
+            }
+            return BadRequest("Unable to Editr Record");
+        }
+
+        [HttpDelete]
+        [Route("DeleteTeam")]
+        public IActionResult DeleteTeam(int id)
+        {
+            try
+            {
+                var data = context.Teams.Find(id);
+                context.Teams.Remove(data);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+ 
+            }
+        }
+ 
+        [HttpPost]
+        [Route("AddTeam")]
+        public IActionResult PostTeam(Team t)
+        {
+            if(ModelState.IsValid)
+            {
+                try{
+                    context.Teams.Add(t);
+                    context.SaveChanges();
+                }
+                catch(SystemException ex)
+                {
+                    return BadRequest(ex.InnerException.Message);
+                }
+            }
+ 
+            return Created("Record Added", t); //
+        }
     }
 }
 
