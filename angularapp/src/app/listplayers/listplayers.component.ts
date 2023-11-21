@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../services/admin.service';
+import { AdminService } from '../services/admin-service.service';
  
 @Component({
   selector: 'app-listplayers',
@@ -9,7 +9,7 @@ import { AdminService } from '../services/admin.service';
 export class ListplayersComponent implements OnInit {
  
   playerdata: any[] = [
-    {path: 'listplayers',Component:ListplayersComponent}
+    {path: 'GetPlayer',Component:ListplayersComponent}
   ]
  
   constructor(private ps:AdminService) {
