@@ -9,7 +9,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  playerdata: Player={id: 0, name: '', age:0, category: '',biddingprice: 0,teamId:0}
+  playerdata: Player={id: 0, name: '', age:0, category: '',biddingPrice: 0,teamId:0}
 
   constructor(private as: AdminService,private route: Router, private ar: ActivatedRoute ) { }
 
@@ -23,7 +23,7 @@ export class EditComponent implements OnInit {
   Details(id:number){
     this.as.Details(id).subscribe((data:Player)=> this.playerdata= data)
   }
-  savaData(player: Player){
+  saveData(player: Player){
     this.playerdata= player
 
     this.as.editPlayer(this.playerdata).subscribe(

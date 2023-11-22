@@ -9,7 +9,7 @@ import {Player} from '../models/player';
   styleUrls: ['./addplayer.component.css']
 })
 export class AddplayerComponent implements OnInit {
-  playerdata: Player ={id:0,name:'',age:0, category:'',biddingprice:0, teamId:0}
+  playerdata: Player ={id:0,name:'',age:0, category:'',biddingPrice:0, teamId:0}
 
   constructor(private as: AdminService, private route:Router) { }
   saveData(player: Player):void{
