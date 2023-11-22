@@ -12,6 +12,7 @@ import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
+import { DisplayTeamComponent } from './display-team/display-team.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeletePlayerComponent } from './delete-player/delete-player.component';
     EditComponent,
     DetailsComponent,
     EditPlayerComponent,
-    DeletePlayerComponent
+    DeletePlayerComponent,
+    DisplayTeamComponent
   ],
   imports: [
     BrowserModule,
