@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailsComponent } from './details/details.component';
     AddplayerComponent,
     MenuComponent,
     EditComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,
