@@ -50,8 +50,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminService } from './admin.service';
-import { Team } from '../../models/team.model';
-import { Player } from '../../models/player.model';
+import { Team } from '../models/team';
+import { Player } from '../models/player';
 import { HttpTestingController } from '@angular/common/http/testing';
 
 describe('AdminService Integration Tests', () => {

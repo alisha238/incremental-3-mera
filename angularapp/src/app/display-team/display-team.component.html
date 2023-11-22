@@ -1,28 +1,3 @@
-<p>display-team works!</p>
-// Display All Player Html
-
-<div class ="container">
-    <div class="jumbotron">
-        <h1>List Players</h1>
-        <table class="table">
-            <thead>
-                <th></th>
-            </thead>
-        </table>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class ="container">
     <div class="jumbotron">
@@ -34,23 +9,23 @@
                  <th>Age</th>
                  <th>Category</th>
                  <th>Bidding Price</th>
-//                 <th>Team Id</th>
-//             </thead>
+                 <th>Team Id</th>
+             </thead>
 
-//             <tbody>
-//                 <tr *ngFor ="let m of playerdata">
-//                     <td>{{m.id}}</td>
-//                     <td>{{m.name}}</td>
-//                     <td>{{m.age}}</td>
-//                     <td>{{m.category}}</td>
-//                     <td>{{m.biddingPrice}}</td>
-//                     <td>{{m.teamId}}</td>
-//                     <td><a [routerLink] = "['/GetPlayer/',m.id]">Details</a></td> &nbsp;&nbsp;
-//                     <td><a [routerLink] = "['/EditPlayer/',m.id]">Edit</a></td>&nbsp;&nbsp;
-//                     <td><a [routerLink]="['/DeletePlayer/',m.id]"> Delete</a></td> &nbsp;&nbsp;
+             <tbody>
+                 <tr *ngFor ="let m of teamData">
+                     <td>{{m.id}}</td>
+                     <td>{{m.name}}</td>
+                     <td>{{m.age}}</td>
+                     <td>{{m.category}}</td>
+                     <td>{{m.biddingPrice}}</td>
+                     <td>{{m.teamId}}</td>
+                     <td><a [routerLink] = "['/GetPlayer/',m.id]">Details</a></td> &nbsp;&nbsp;
+                     <td><a [routerLink] = "['/EditPlayer/',m.id]">Edit</a></td>&nbsp;&nbsp;
+                     <td><a [routerLink]="['/DeletePlayer/',m.id]"> Delete</a></td> &nbsp;&nbsp;
                    
-//                 </tr>
-//             </tbody>
-//         </table>
-//     </div>
-// </div>
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+ </div>

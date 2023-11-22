@@ -36,7 +36,7 @@ export class AdminService {
   }
 
   
-  getTeam():Observable<Team[]>
+  getTeams():Observable<Team[]>
   {
     return this.httpclient.get<Team[]>(this.url+ '/GetTeams')
   }
