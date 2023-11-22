@@ -13,6 +13,7 @@ import { DetailsComponent } from './details/details.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { DisplayTeamComponent } from './display-team/display-team.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DisplayTeamComponent } from './display-team/display-team.component';
     DetailsComponent,
     EditPlayerComponent,
     DeletePlayerComponent,
-    DisplayTeamComponent
+    DisplayTeamComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
