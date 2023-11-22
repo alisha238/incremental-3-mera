@@ -14,6 +14,7 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { DisplayTeamComponent } from './display-team/display-team.component';
 import { HomeComponent } from './home/home.component';
+import { TeamlistComponent } from './teamlist/teamlist.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     EditPlayerComponent,
     DeletePlayerComponent,
     DisplayTeamComponent,
-    HomeComponent
+    HomeComponent,
+    TeamlistComponent
   ],
   imports: [
     BrowserModule,
