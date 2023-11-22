@@ -288,7 +288,7 @@ namespace dotnetapp.Controllers
        
  
         [HttpPut]
-        [Route("EditPlayer")]
+        [Route("EditPlayer/{id}")]
         public IActionResult PutPlayer(int id, Player player)
         {
             try

@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { DeletePlayerComponent } from './delete-player/delete-player.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     MenuComponent,
     EditComponent,
     DetailsComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    DeletePlayerComponent
   ],
   imports: [
     BrowserModule,

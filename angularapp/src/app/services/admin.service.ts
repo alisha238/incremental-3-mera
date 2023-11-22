@@ -29,6 +29,10 @@ export class AdminService {
   editPlayer(playerdata: Player):Observable<Player>{
     return this.httpclient.put<Player>(this.url+'/EditPlayer/' + playerdata.id, playerdata,this.httpOptions); 
   }
+
+  deletePlayer(playerdata: Player):Observable<Player>{
+    return this.httpclient.delete<Player>(this.url+'/DeletePlayer' + playerdata.id)
+  }
 }
 
 
