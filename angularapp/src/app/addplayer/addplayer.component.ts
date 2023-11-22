@@ -25,4 +25,8 @@ export class AddplayerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//   Show(){
+//     this.route.navigate(['/GetPlayer'])
+// }
+
 }
