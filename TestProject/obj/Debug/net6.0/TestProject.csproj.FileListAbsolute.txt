@@ -3,6 +3,7 @@
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/dotnetapp.runtimeconfig.json
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/appsettings.Development.json
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/appsettings.json
+/home/coder/project/workspace/TestProject/bin/Debug/net6.0/package-lock.json
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/dotnetapp
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/NUnit3.TestAdapter.dll
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/NUnit3.TestAdapter.pdb
