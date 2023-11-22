@@ -30,8 +30,8 @@ export class AdminService {
     return this.httpclient.put<Player>(this.url+'/EditPlayer/' + playerdata.id, playerdata,this.httpOptions); 
   }
 
-  deletePlayer(playerdata: Player):Observable<Player>{
-    return this.httpclient.delete<Player>(this.url+'/DeletePlayer' + playerdata.id)
+  deletePlayer(id: number):Observable<Player>{
+    return this.httpclient.delete<Player>(this.url+'/DeletePlayer/' + id)
   }
 }
 

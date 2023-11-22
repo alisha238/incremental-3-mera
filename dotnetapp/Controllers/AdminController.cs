@@ -315,7 +315,7 @@ namespace dotnetapp.Controllers
         }
  
         [HttpDelete]
-        [Route("DeletePlayer")]
+        [Route("DeletePlayer/{id}")]
         public IActionResult DeletePlayer(int id)
         {
             try
