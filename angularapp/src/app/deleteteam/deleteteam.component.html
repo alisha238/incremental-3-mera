@@ -1,0 +1,15 @@
+
+<p>deleteteam works!</p>
+<h2>Delete Team</h2>
+<hr>
+<form (ngSubmit)="saveData(teamdata)" #playerform="ngForm">
+<div>
+<label for="teamId">ID</label>
+<input type="text" id="teamId" name="teamId" readonly [(ngModel)]="teamdata.teamId">
+</div>
+<div>
+<label for="teamName">Team Name</label>
+<input type="text" id="teamName" name="teamName" readonly [(ngModel)]="teamdata.teamName">
+</div>
+ 
+    <input type="submit" value="Delete" class="btn btn-Info">

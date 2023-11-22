@@ -1,23 +1,23 @@
 <p>teamslist works!</p>
 <div class="container">
     <div class="jumbotron">
-    <table class="table">
-    <thead>
-    <th>Team ID</th>
-    <th>Team Name</th>
-    </thead>
+        <table class="table">
+            <thead>
+                <th>Team ID</th>
+                <th>Team Name</th>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let m of teamdata">
+                <td> {{m.teamId}} </td>
+                <td> {{m.teamName}} </td>
+                <a [routerLink]="['/DisplayTeams/',m.teamId]">Details</a>&nbsp;&nbsp;
+                <a [routerLink]="['/EditTeam/',m.teamId]">Edit</a>&nbsp;&nbsp;
+                <a [routerLink]="['/DeleteTeam/',m.teamId]">Delete</a>&nbsp;&nbsp;    
+                </tr>
+            </tbody>
     
-    <tbody>
-    <tr *ngFor="let m of teamdata">
-    <td> {{m.teamId}} </td>
-    <td> {{m.teamName}} </td>
-    <a [routerLink]="['/DisplayTeams/',m.teamId]">Details</a>&nbsp;&nbsp;
-    <a [routerLink]="['/EditTeam/',m.teamId]">Edit</a>&nbsp;&nbsp;
-    <a [routerLink]="['/DeleteTeam/',m.teamId]">Delete</a>&nbsp;&nbsp;    
-    </tr>
-    </tbody>
-    
-            </table>
+        </table>
     <!-- <a [routerLink]="['/AddTeam/',m.id]" Add Team </a>&nbsp;&nbsp; -->
     </div>
 </div>
