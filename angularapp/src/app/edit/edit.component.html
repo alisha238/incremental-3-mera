@@ -1,1 +1,46 @@
 <p>edit works!</p>
+<h2>Editing Movie</h2>
+<hr>
+<form (ngSubmit)="saveData(playerdata)" #playerform = "ngForm">
+    <div>
+        <label for="id">Id</label>
+        <input type="text" id="name" name="name" readonly [(ngModel)]="playerdata.id">    
+    </div>
+    <div>
+        <label for="name">Player Name</label>
+        <input type ="text" id="name" name="name" placeholder="Enter player name here"
+        [(ngModel)]="playerdata.name" required #name="ngModel">
+    </div>
+
+    <div>
+        <label for="age">Player Age</label>
+        <input type ="text" id="age" name="age" placeholder="Enter Age"
+        [(ngModel)]="playerdata.age" required #age="ngModel">
+        
+    </div>
+
+    <div>
+        <label for="category">Category</label>
+        <input type ="text" id="category" name="category" placeholder="Enter Category"
+        [(ngModel)]="playerdata.category" required #name="ngModel">
+    </div>
+
+    <div>
+        <label for="biddingprice">Bidding Price</label>
+        <input type ="text" id="biddingprice" name="biddingprice" placeholder="Enter Bidding Price"
+        [(ngModel)]="playerdata.biddingprice" required #name="ngModel">
+    </div>
+
+    <div>
+        <label for="teamId">Team Id</label>
+        <input type ="text" id="teamId" name="teamId" placeholder="Enter Team Id"
+        [(ngModel)]="playerdata.teamId" required #name="ngModel">
+    </div>
+
+    <br>
+    <br>
+
+    <input type ="submit" value="Save" class ="btn btn-Info" [disabled] ="!playerform.valid">
+</form>
+
+

@@ -16,6 +16,21 @@ export class EditComponent implements OnInit {
   id: number
   ngOnInit(): void {
     const tid= this.ar.snapshot.paramMap.get('id')
+    this.id = Number(tid)
+    this.Details(this.id)
+  }
+
+  Details(id:number){
+    this.as.Details(id).subscribe((data:Player)=> this.playerdata= data)
+  }
+  savaData(player: Player){
+    this.playerdata= player
+
+    this.as.editPlayer(this.playerdata).subscribe(
+      ()=>{
+        alert("Record Edited")
+        this.route.navigate(['/getPlayers'])
+      })
   }
 
 }
