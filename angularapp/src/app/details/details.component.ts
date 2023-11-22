@@ -12,8 +12,10 @@ import { Player } from '../models/player';
 export class DetailsComponent implements OnInit {
 
   constructor(private as: AdminService, private ar: ActivatedRoute, private route: Router) { }
-  
+
   playerdata :Player
+  id: number
+  
   ngOnInit() {
     const tid = this.as.snapshot.paramMap.get('id')
     this.id = Number(tid)
