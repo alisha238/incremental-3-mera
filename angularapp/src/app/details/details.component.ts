@@ -16,8 +16,8 @@ export class DetailsComponent implements OnInit {
   playerdata :Player
   id: number
   
-  ngOnInit() {
-    const tid = this.as.snapshot.paramMap.get('id')
+  ngOnInit() :void{
+    const tid = this.ar.snapshot.paramMap.get('id')
     this.id = Number(tid)
 
     this.as.Details(this.id).subscribe((data: Player)=>{
