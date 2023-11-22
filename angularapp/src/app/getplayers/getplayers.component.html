@@ -1,0 +1,33 @@
+
+<div class ="container">
+    <div class="jumbotron">
+        <h1>List of all Players</h1>
+        <table class="table">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Category</th>
+                <th>Bidding Price</th>
+                <th>Team Id</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor ="let m of playerdata">
+                    <td>{{m.id}}</td>
+                    <td>{{m.name}}</td>
+                    <td>{{m.age}}</td>
+                    <td>{{m.category}}</td>
+                    <td>{{m.biddingPrice}}</td>
+                    <td>{{m.teamId}}</td>
+                    <td><a [routerLink] = "['/find/',m.id]">Details</a></td> &nbsp;&nbsp;
+                    <td><a [routerLink] = "['/edit/',m.id]">Edit</a></td>&nbsp;&nbsp;
+                    <td><a [routerLink]="['/delete/',m.id]"> Delete</a></td> &nbsp;&nbsp;
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
