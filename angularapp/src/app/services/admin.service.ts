@@ -12,7 +12,7 @@ export class AdminService {
 
   constructor(private httpclient: HttpClient) { }
 
-  GetAllPlayers():Observable<any[]>
+  getPlayers():Observable<any[]>
   {
     return this.httpclient.get<any[]>(this.url + '/GetPlayer');
   }
