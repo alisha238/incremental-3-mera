@@ -10,7 +10,7 @@ export class GetplayersComponent implements OnInit {
   playerdata: any[]=[]
 
   constructor(private as:AdminService) {
-    this.as.GetAllPlayers().subscribe(data =>{this.playerdata.push(...data)})
+    this.as.getPlayers().subscribe(data =>{this.playerdata.push(...data)})
     console.log(this.playerdata)
    }
 

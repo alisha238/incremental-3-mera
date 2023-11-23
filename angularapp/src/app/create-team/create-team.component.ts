@@ -14,8 +14,8 @@ export class CreateTeamComponent implements OnInit {
   constructor(private as:AdminService,private route:Router) { }
 saveData(team:Team):void{
  
-  this.teamdata= newTeam
-  this.as.createTeam(newTeam).subscribe(
+  this.teamdata=team
+  this.as.createTeam(this.teamdata).subscribe(
     ()=>{
       alert('Record added sucessfully')
       this.route.navigate(['/ListTeams'])
