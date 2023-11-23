@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./addteam.component.css']
 })
 export class AddteamComponent implements OnInit {
-teamdata:Team={teamId:0,teamName:''}
+teamdata:Team={teamId:0,teamName:'', maximumBudget:0}
   constructor(private as:AdminService,private route:Router) { }
 saveData(team:Team):void{
  
