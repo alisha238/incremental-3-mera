@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Player} from '../models/player'
+import {Player} from '../models/player.model'
 import { Team } from '../models/team';
 
 @Injectable({
@@ -35,7 +35,7 @@ export class AdminService {
   }
 
   
-  getTeams():Observable<Team[]>
+  createTeam():Observable<Team[]>
   {
     return this.httpclient.get<Team[]>(this.url+ '/GetTeams')
   }
