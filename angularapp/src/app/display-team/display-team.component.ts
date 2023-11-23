@@ -11,7 +11,7 @@ export class DisplayTeamComponent implements OnInit {
   teamData: any[]=[]
 
   constructor(private as: AdminService) {
-    this.as.getTeams().subscribe(data =>{this.teamData.push(...data)})
+    this.as.getTeam().subscribe(data =>{this.teamData.push(...data)})
     console.log(this.teamData)
   }
 

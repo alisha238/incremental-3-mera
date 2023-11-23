@@ -35,7 +35,7 @@ export class AdminService {
   }
 
   
-  createTeam():Observable<Team[]>
+  getTeam():Observable<Team[]>
   {
     return this.httpclient.get<Team[]>(this.url+ '/GetTeams')
   }
@@ -46,14 +46,14 @@ export class AdminService {
   }
 
   httpOptions= {headers:new HttpHeaders({'Content-type':'application/json'})}
-  addTeam(teamdata:Team):Observable<Team>
+  createTeam(teamdata:Team):Observable<Team>
   {
     return this.httpclient.post<Team>(this.url+'/AddTeam',teamdata,this.httpOptions)
   }
  
   editTeam(teamdata:Team):Observable<Team>
   {
-    return this.httpclient.put<Team>(this.url+'/EditTeam/'+teamdata.teamId,teamdata,this.httpOptions)
+    return this.httpclient.put<Team>(this.url+'/EditTeam/'+teamdata.id,teamdata,this.httpOptions)
   }
  
   deleteTeam(id:number):Observable<Team>{

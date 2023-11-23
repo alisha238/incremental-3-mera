@@ -1,5 +1,5 @@
 export interface Team {
-    teamId: number
-    teamName: string
+    id: number
+    name: string
     maximumBudget: number
 }

@@ -77,7 +77,7 @@ describe('AdminService Integration Tests', () => {
   // });
 
   fit('Week5_Day5_should retrieve teams from the backend', (done: DoneFn) => {
-    service.getTeams().subscribe(
+    service.getTeam().subscribe(
       (teams: Team[]) => {
         console.log(teams)
         expect(teams.length).toBeGreaterThan(0); // Check if any teams are retrieved

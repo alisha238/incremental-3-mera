@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class CreateTeamComponent implements OnInit {
 
-  teamdata:Team={teamId:0,teamName:'', maximumBudget:0}
+  teamdata:Team={id:0,name:'', maximumBudget:0}
   constructor(private as:AdminService,private route:Router) { }
 saveData(team:Team):void{
  
   this.teamdata=team
-  this.as.addTeam(this.teamdata).subscribe(
+  this.as.createTeam(this.teamdata).subscribe(
     ()=>{
       alert('Record added sucessfully')
       this.route.navigate(['/ListTeams'])
