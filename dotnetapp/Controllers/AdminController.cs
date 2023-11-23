@@ -255,7 +255,7 @@ namespace dotnetapp.Controllers
     public class AdminController : ControllerBase
     {
         private readonly ApplicationDbContext context;
-    //    ApplicationDbContext context = new ApplicationDbContext();
+  
  
         public AdminController(ApplicationDbContext _context)
         {

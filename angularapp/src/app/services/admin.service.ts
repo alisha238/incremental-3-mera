@@ -22,7 +22,6 @@ export class AdminService {
     return this.httpclient.get<Player>(this.url +'/GetPlayer/' + id);
   }
 
-  // httpOptions= {headers:new HttpHeaders({'Content-type':'application/json'})}
   AddPlayer(playerdata:Player):Observable<Player>{
     return this.httpclient.post<Player>(this.url+'/AddPlayer',playerdata, this.httpOptions);
   }
