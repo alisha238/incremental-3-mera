@@ -15,7 +15,7 @@ export class CreateTeamComponent implements OnInit {
 saveData(team:Team):void{
  
   this.teamdata=team
-  this.as.createTeam(this.teamdata).subscribe(
+  this.as.addTeam(this.teamdata).subscribe(
     ()=>{
       alert('Record added sucessfully')
       this.route.navigate(['/ListTeams'])
